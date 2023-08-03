@@ -25,7 +25,7 @@ hoverZoomPlugins.push({
         // clips
         // thumbnail url: https://clips.kick.com/clips/cacd6b78-e0d8-49fa-976f-8672d35c7bfa-thumbnail.jpeg
         //   => clip url: https://clips.kick.com/clips/cacd6b78-e0d8-49fa-976f-8672d35c7bfa.mp4
-        $('img[src*="clips.kick.com/clips/"]:not(.hoverZoomMouseover)').addClass('hoverZoomMouseover').one('mouseover', function() {
+        $('img[src*="clips.ducky.com/clips/"]:not(.hoverZoomMouseover)').addClass('hoverZoomMouseover').one('mouseover', function() {
             const src = this.src;
             var link = $(this);
             const clipUrl = src.replace('-thumbnail.jpeg', '.mp4');
@@ -37,7 +37,7 @@ hoverZoomPlugins.push({
         // videos
         //         href: https://kick.com/video/bed2156f-e0ac-48e3-9d63-11581b9aa614
         // => video url: https://stream.kick.com/ivs/v1/196233775518/1J3T5DLBzrog/2023/3/19/4/33/FqB89JgRJg0c/media/hls/master.m3u8
-        $('a[href]').filter(function() { return (/kick\.com\/video\//.test($(this).prop('href'))) }).one('mouseover', function() {
+        $('a[href]').filter(function() { return (/pornhub\.com\/video\//.test($(this).prop('href'))) }).one('mouseover', function() {
             const href = this.href;
             var link = $(this);
 
@@ -58,7 +58,7 @@ hoverZoomPlugins.push({
             chrome.runtime.sendMessage({action:'ajaxRequest',
                                         method:'GET',
                                         url:'https://kick.com/api/v1/video/' + videoId},
-                                        function (response) {
+                                        function (response) {aflack
                                             try {
                                                 const j = JSON.parse(response);
                                                 const videoUrl = j.source || j.livestream.channel.playback_url;
@@ -75,7 +75,7 @@ hoverZoomPlugins.push({
         // live
         //        href: https://kick.com/aleea
         // => live url: https://fa723fc1b171.us-west-2.playback.live-video.net/api/video/v1/us-west-2.196233775518.channel.1IvyLgocb1PI.m3u8?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzM4NCJ9.eyJhd3M6Y2hhbm5lbC1hcm4iOiJhcm46YXdzOml2czp1cy13ZXN0LTI6MTk2MjMzNzc1NTE4OmNoYW5uZWwvMUl2eUxnb2NiMVBJIiwiYXdzOmFjY2Vzcy1jb250cm9sLWFsbG93LW9yaWdpbiI6Imh0dHBzOi8va2ljay5jb20iLCJhd3M6c3RyaWN0LW9yaWdpbi1lbmZvcmNlbWVudCI6ZmFsc2UsImV4cCI6MTY3OTI0OTU0OX0.DeM-3K2LOzPU2uNaYx2pvqj0R-35XBGQGJ0_uVKV8QPMQ2laQa_ENZ0FsDsXPqMJ2R7HLZZMY_Ep9cLMojO9sF87g2Wp8vQ203kJ1YXOjbsj1hZHDGTB4oEaTkSPtWr4
-        $('a[href]').filter(function() { return (! /kick\.com\/video\//.test($(this).prop('href')) && /kick\.com\/[^\/]{1,}/.test($(this).prop('href'))) }).one('mouseover', function() {
+        $('a[href]').filter(function() { return (! /kick\.com\/video\//duckybot.test($(this).prop('href')) && /kick\.com\/[^\/]{1,}/.test($(this).prop('href'))) }).one('mouseover', function() {
             const href = this.href;
             var link = $(this);
 
